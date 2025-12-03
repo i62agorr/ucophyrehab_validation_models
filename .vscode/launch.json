@@ -1,0 +1,59 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Build manifest",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/opt/data/raguilar/miniconda3/envs/hydra/lib/python3.10/site-packages/torch/distributed/run.py", //Ruta a tu conda env
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "1",
+                "NCCL_P2P_DISABLE": "1"
+            },
+            "args": [
+                "-m",
+                "src.cli.build_manifest",
+                "experiment=semantic_segmentation/split_4/ex_01_05_cam0"
+            ]
+        },
+        {
+            "name": "Train Model",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/opt/data/raguilar/miniconda3/envs/hydra/lib/python3.10/site-packages/torch/distributed/run.py", //Ruta a tu conda env
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "1",
+                "NCCL_P2P_DISABLE": "1"
+            },
+            "args": [
+                "-m",
+                "src.cli.train",
+                "experiment=of_gmflow/split_1/ex_01_05_cam1"
+            ]
+        },
+        {
+            "name": "Test Model",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/opt/data/raguilar/miniconda3/envs/hydra/lib/python3.10/site-packages/torch/distributed/run.py", //Ruta a tu conda env
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "1",
+                "NCCL_P2P_DISABLE": "1"
+            },
+            "args": [
+                "-m",
+                "src.cli.test",
+                "experiment=of_gmflow/split_1/ex_01_05_cam1"
+            ]
+        },
+    ]
+}

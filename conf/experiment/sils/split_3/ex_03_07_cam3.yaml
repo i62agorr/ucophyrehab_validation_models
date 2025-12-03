@@ -1,0 +1,14 @@
+#@package _global_
+
+project:
+  name: ucophyrehab2
+  run_name: ex_03_07_cam3
+
+data:
+  modality: "sils"
+  channels: "1"
+  dataset_loader: "SilsFolderDataset"
+  split_path: "data/splits/split_3_80_10_10.json"
+  split_name: "split_3"
+  include_exercises: ['03', '07']
+  include_cameras: ['cam3']

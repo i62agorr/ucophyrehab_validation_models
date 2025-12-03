@@ -1,0 +1,15 @@
+#@package _global_
+
+project:
+  name: ucophyrehab2
+  run_name: ex_01_05_cam3
+
+data:
+  modality: "sils_cropped"
+  file_ext: "jpg"
+  channels: "1"
+  dataset_loader: "SilsFolderDataset"
+  split_path: "data/splits/split_2_80_10_10.json"
+  split_name: "split_2"
+  include_exercises: ['01', '05']
+  include_cameras: ['cam3']

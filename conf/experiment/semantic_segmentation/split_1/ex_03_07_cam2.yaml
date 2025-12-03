@@ -1,0 +1,14 @@
+#@package _global_
+
+project:
+  name: ucophyrehab2
+  run_name: ex_03_07_cam2
+
+data:
+  modality: "semantic_segmentation"
+  channels: "3"
+  dataset_loader: "RGBFolderDataset"
+  split_path: "data/splits/split_1_80_10_10.json"
+  split_name: "split_1"
+  include_exercises: ['03', '07']
+  include_cameras: ['cam2']

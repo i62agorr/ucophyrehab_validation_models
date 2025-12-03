@@ -1,0 +1,15 @@
+#@package _global_
+
+project:
+  name: ucophyrehab2
+  run_name: ex_10_14_cam1
+
+data:
+  modality: "of_tvl1"
+  file_ext: "png"
+  channels: "3"
+  dataset_loader: "RGBFolderDataset"
+  split_path: "data/splits/split_2_80_10_10.json"
+  split_name: "split_2"
+  include_exercises: ['10', '14']
+  include_cameras: ['cam1']

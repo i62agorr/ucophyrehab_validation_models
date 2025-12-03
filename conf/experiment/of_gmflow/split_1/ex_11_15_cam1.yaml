@@ -1,0 +1,13 @@
+#@package _global_
+
+project:
+  name: ucophyrehab2
+  run_name: ex_11_15_cam1
+
+data:
+  modality: "of_gmflow"
+  channels: "3"
+  split_path: "data/splits/split_1_80_10_10.json"
+  split_name: "split_1"
+  include_exercises: ['11', '15']
+  include_cameras: ['cam1']

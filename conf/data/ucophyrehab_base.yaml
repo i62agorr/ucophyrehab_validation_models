@@ -1,0 +1,24 @@
+dataset_root: "/opt2/data/raguilar/data/ucophyrehab/"     # ruta a tu dataset
+dataset_loader: "OFFolderDataset"
+splits: ['train', 'val', 'test'] # Los splits deben estar definidos en el JSON
+split_normalizer: "train"  # split usado para calcular normalización ("train" recomendado) OJO - Debe ser el primero en el array de splits
+
+metadata_json: /opt2/data/raguilar/data/ucophyrehab/dataset_3d_with_angles.json
+modality: "of_gmflow"                              # sils | sils_cropped | rgb | of_gmflow | of_tvl1 | semantic_segmentation
+file_ext: "png"
+frame_zfill: 4                           # número de dígitos en los nombres de frame (p.ej., 000123.jpg -> 4)
+image_size: [224, 224]
+T: 32
+channels: 1 # Nº de canales de las imágenes (RGB=3, Sils=1)
+stride: 8
+
+# Filtros opcionales (si quieres limitar cámaras/sujetos/ejercicios):
+include_subjects: []    # ej.: ["01","02"] (vacío = todos) # OJO: Si se aplica este filtro se anula el split
+include_exercises: []   # ej.: ["03","04"] (vacío = todos)
+include_cameras: []     # ej.: ["C","L+","L-"] o ids reales de tus carpetas
+subject_to_folder:
+  type: "identity"   # "identity" | "prefix_0" | "custom"
+  custom_map: {}    # ej.: {"01": "subject_01", "02": "subject_02"}
+
+normalization: # Aplied normalization during the build_manifest stage
+  function: "zscore"   # "zscore" | "minmax" | "none"

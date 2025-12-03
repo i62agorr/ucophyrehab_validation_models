@@ -1,0 +1,14 @@
+#@package _global_
+
+project:
+  name: ucophyrehab2
+  run_name: ex_09_13_cam0
+
+data:
+  modality: "of_gmflow"
+  channels: "3"
+  dataset_loader: "RGBFolderDataset"
+  split_path: "data/splits/split_4_80_10_10.json"
+  split_name: "split_4"
+  include_exercises: ['09', '13']
+  include_cameras: ['cam0']
