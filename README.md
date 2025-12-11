@@ -71,7 +71,15 @@ source .ucophyrehab2/bin/activate
 pip install -r requirements.txt
 ```
 ## Dataset preparation
-The first step to launch an experiment is build a manifest for the data set of your experiment. Create a new configuration file or use one of the provided ones.
+### Separate frames
+First of all, you need to launch the `prepare_dataset` script to separate the frames from the distributed `.mp4` videos. You just need to launch the provided script specifying the downloaded and uncompressed dataset root, the modality that you want to separate and the output path.
+
+```
+bash scripts/prepare_dataset.sh /path_to_your_mp4_dataset_root <modality> /output_path
+```
+
+### Build Manifests
+Once that you have the frames separated for the desired modality, you will need to build a manifest for the data set of your experiment. Create a new configuration file or use one of the provided ones.
 
 You must specify the path to the UCOPhyRehab++ dataset root, the modality you want to use and the extension of the target files. Also, if you want to change the splits of the data, you must specify the new files in `conf/data/ucophyrehab_base.yaml` or in your `experiment` file.
 
